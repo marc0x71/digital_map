@@ -1,6 +1,6 @@
 # Digital Map
 
-Una struttura dati in Rust per mappare stringhe numeriche a valori, implementata come trie digitale.
+Una struttura dati efficiente in Rust per mappare stringhe numeriche a valori, implementata come trie digitale.
 
 ## Descrizione
 
@@ -68,9 +68,28 @@ assert_eq!(map.get("123"), Some(&"centoventitre".to_string()));
 assert_eq!(map.get("1"), None); // Non esiste se non aggiunta esplicitamente
 ```
 
+## API Reference
+
+### `Map<T>`
+
+#### Metodi
+
+- `Map::default()` - Crea una nuova mappa vuota
+- `add(&mut self, input: &str, value: T)` - Inserisce un valore associato alla chiave numerica
+- `get(&self, input: &str) -> Option<&T>` - Recupera il valore associato alla chiave
+
+#### Vincoli
+
+- `T` deve implementare `Default`
+- Le chiavi devono contenere solo caratteri numerici (0-9)
+
+### `Node<T>`
+
+Struttura interna che rappresenta un nodo nel trie. Generalmente non utilizzata direttamente.
+
 ## Gestione degli Errori
 
-Al momento la struttura genera panic nei seguenti casi:
+La struttura genera panic nei seguenti casi:
 
 - **Input non valido**: Se una stringa contiene caratteri non numerici
   ```rust
@@ -122,12 +141,11 @@ I contributi sono benvenuti! Per favore:
 
 ## Roadmap
 
-- [ ] Gestione degli errori con `Result` invece di panic
 - [ ] Metodo per rimuovere chiavi
-- [ ] Supporto per iterazione sui nodi
+- [ ] Gestione degli errori con `Result` invece di panic
 - [ ] Ottimizzazioni per uso concorrente
+- [ ] Supporto per pattern matching sui prefissi
 
 ---
 
-**ATTENZIONE**: Questo è un progetto educativo/sperimentale. Per uso in produzione, considera le tue specifiche esigenze di performance e sicurezza.
-
+**Nota**: Questo è un progetto educativo/sperimentale. Per uso in produzione, considera le tue specifiche esigenze di performance e sicurezza.
