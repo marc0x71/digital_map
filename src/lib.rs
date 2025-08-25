@@ -1,4 +1,7 @@
+mod error;
 mod map;
+mod node;
+mod tokenizer;
 
 #[cfg(test)]
 mod tests {
