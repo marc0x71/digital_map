@@ -142,7 +142,7 @@ I contributi sono benvenuti! Per favore:
 ## Roadmap
 
 - [ ] Metodo per rimuovere chiavi
-- [ ] Gestione degli errori con `Result` invece di panic
+- [X] Gestione degli errori con `Result` invece di panic
 - [ ] Ottimizzazioni per uso concorrente
 - [ ] Supporto per pattern matching sui prefissi
 

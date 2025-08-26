@@ -142,7 +142,7 @@ Contributions are welcome! Please:
 ## Roadmap
 
 - [ ] Method to remove keys
-- [ ] Error handling with `Result` instead of panic
+- [X] Error handling with `Result` instead of panic
 - [ ] Optimizations for concurrent use
 - [ ] Support for prefix pattern matching
 
